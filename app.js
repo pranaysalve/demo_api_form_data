@@ -16,7 +16,7 @@ app.enable("trust proxy");
 const corsOptions = {
   origin: "https://form-app-jade.vercel.app",
 };
-app.use(cors());
+app.use(cors(corsOptions));
 app.options("*", cors());
 
 app.use(helmet());
