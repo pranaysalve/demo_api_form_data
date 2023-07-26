@@ -42,9 +42,10 @@ app.use(mongoSanitize());
 app.use(xss());
 app.use(compression());
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  const doc = await UserModel.find().sort({ createdAt: desc });
   res.json({
-    data: "res",
+    data: doc,
   });
 });
 app.post("/", async (req, res) => {
