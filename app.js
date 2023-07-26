@@ -13,8 +13,8 @@ const app = express();
 
 app.enable("trust proxy");
 
-var whitelist = ["https://form-app-jade.vercel.app", "http://localhost:8585"];
-var corsOptions = {
+const whitelist = ["https://form-app-jade.vercel.app", "http://localhost:8585"];
+const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
@@ -52,7 +52,7 @@ app.use(mongoSanitize());
 app.use(xss());
 app.use(compression());
 
-app.get("/", async (req, res) => {
+app.get("/", cors(corsOptions), async (req, res) => {
   const doc = await UserModel.find().sort({ createdAt: "desc" });
   res.json({
     data: doc,
