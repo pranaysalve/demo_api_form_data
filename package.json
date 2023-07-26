@@ -1,5 +1,5 @@
 {
-  "name": "accounting",
+  "name": "demo_api_form_data",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,7 +9,7 @@
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [
-    "accounting"
+    "demo_api_form_data"
   ],
   "dependencies": {
     "bcryptjs": "^2.4.3",
