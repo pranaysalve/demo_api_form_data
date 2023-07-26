@@ -46,7 +46,7 @@ app.use(xss());
 app.use(compression());
 
 app.get("/", async (req, res) => {
-  const doc = await UserModel.find().sort({ createdAt: desc });
+  const doc = await UserModel.find().sort({ createdAt: "desc" });
   res.json({
     data: doc,
   });
