@@ -13,15 +13,8 @@ const app = express();
 
 app.enable("trust proxy");
 
-const whitelist = ["https://form-app-jade.vercel.app", "http://localhost:8585"];
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "https://form-app-jade.vercel.app",
 };
 app.use(cors(corsOptions));
 app.options("*", cors());
