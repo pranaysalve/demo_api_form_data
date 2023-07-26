@@ -56,22 +56,22 @@ app.post("/", async (req, res) => {
   const {
     firstName,
     lastName,
-    birthday,
+    birthdate,
     street,
     city,
     state,
-    zip,
+    pin,
     email,
     password,
   } = req.body;
   const doc = await UserModel.create({
     firstName: firstName,
     lastName: lastName,
-    birthday: birthday,
+    birthdate: birthdate,
     street: street,
     city: city,
     state: state,
-    zip: zip,
+    pin: pin,
     email: email,
     password: password,
   });

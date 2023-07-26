@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const UserFormSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
-  birthday: Date,
+  birthdate: Date,
   street: String,
   city: String,
   state: String,
-  zip: String,
+  pin: String,
   email: String,
   password: String,
   createdAt: {
