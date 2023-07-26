@@ -13,6 +13,9 @@ const app = express();
 
 app.enable("trust proxy");
 
+const corsOptions = {
+  origin: "https://form-app-jade.vercel.app",
+};
 app.use(cors());
 app.options("*", cors());
 
